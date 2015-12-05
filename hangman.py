@@ -3,11 +3,14 @@
 ## Feel free to edit this in anyway you like!
 #Imports
 from __future__ import print_function
-
+from sys import exit
 #Functions
 def init():
     '''Initializes the game'''
     secret = raw_input("Welcome to the Hangman Game!\nPlease enter a secret word/phrase: ")
+    if "-" in secret:
+        print("'-' is an invalid character. Exiting program.")
+        exit()
     print("Thank you. Initializing game...")
     return secret
     
